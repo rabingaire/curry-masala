@@ -1,0 +1,26 @@
+<div class="container section">
+<% if !current_user.name %>
+Deliver to
+<%= form_tag({:controller=>"carts", :action=>"update_user"}, method: :get) do %>
+ <div class="row">
+      <div class="input-field offset-s3 col s6">
+        <%= text_field_tag :name %>
+        <%= label_tag 'name' %>
+      </div>
+  </div>
+  <div class="row">
+      <div class="input-field offset-s3 col s6">
+        <%= text_field_tag :address %>
+        <%= label_tag 'Address' %>
+      </div>
+  </div>
+  <div class="row">
+	  <div class="input-field offset-s3 col s6">
+	   <%#= link_to '<i class="small material-icons left">shopping_basket</i> Update'.html_safe, update_user_cart_path,class: "waves-effect white-text waves-light btn" %>
+	   <%= submit_tag 'Update' %>
+	   </div>
+   </div>
+   <%end %>
+<%end %>
+
+</div>

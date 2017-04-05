@@ -1,0 +1,39 @@
+
+
+    
+  <li class="collection-item">
+    <div><%= menu.title %> 
+  <!-- <span class="badge"><%#= number_field_tag 'quantity', 1, in: 1...10 %></span> -->
+  <%= link_to '<i class="material-icons">delete</i>'.html_safe, order_item, { data: { confirm: "Are you sure you wish to delete the menu '#{order_item.menu.title}' from your cart?" }, method: :delete, remote: true, class: "badge secondary-content" } %>
+    <!-- <a href="#!" class="badge secondary-content"><i class="material-icons">delete</i></a> -->
+    <span class="badge new secondary-content green" data-badge-caption="€"> <%= order_item.total_price %> </span>
+    <span class="badge secondary-content"> <%= order_item.quantity %> *  <%= order_item.unit_price %> = </span>
+    </div>
+  </li>
+
+  <!-- <div class="row">
+    <div class="col s8">
+      <%= menu.title %>
+    </div>
+    <div class="col s4">
+
+      <%#= form_for order_item, remote: true do |f| %>
+        <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
+        <div class="row">
+          <div class="col s4">
+            <%#= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+            <%#= f.hidden_field :menu_id, value: menu.id %>
+          </div>
+          <div class="col s8 text-right">
+            <div class="btn-group">
+              <%#= f.submit "Update Quantity", class: "btn btn-primary" %>
+              <%#= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the menu '#{order_item.menu.title}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+            </div>
+          </div>
+        </div>
+        <h4 class="text-right">Total Price: <span style="color: green"><%#= number_to_currency order_item.total_price %></span></h4>
+      <%# end %>
+    </div>
+
+  </div>
+ -->

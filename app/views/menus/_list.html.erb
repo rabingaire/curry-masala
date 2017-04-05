@@ -1,0 +1,13 @@
+<ul class="collapsible" data-collapsible="accordion">
+        <% @menus.each do |menu| %>
+          <li>
+            <div class="collapsible-header">
+            <a href="#" title="Add to Cart"><span class="badge"><i class="material-icons left">shopping_cart</i></span></a>
+                <span class="new badge" data-badge-caption="€">4</span><%= menu.title %>
+            </div>
+            <div class="collapsible-body">
+              <p><%= menu.description %></p>
+            </div>
+          </li>
+          <% end %>
+        </ul>

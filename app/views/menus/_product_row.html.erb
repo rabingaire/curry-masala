@@ -1,0 +1,9 @@
+ <li>
+        <div class="collapsible-header">
+        <%= link_to '<span class="badge"><i class="small material-icons left">shopping_cart</i></span>'.html_safe, order_items_create_path(:menu_id => menu.id, :quantity => 1), :remote => 'true' %>
+        <span class="new badge" data-badge-caption="€"><%= menu.price %></span><%= menu.title %>
+          </div>
+          <div class="collapsible-body">
+            <p><%= menu.description %></p>
+          </div>
+        </li>

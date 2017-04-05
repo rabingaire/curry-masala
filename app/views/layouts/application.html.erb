@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+  <%= render :partial => '/partials/navbar', :remote => false%>
+  <!-- <h1 class="cart-text"> -->
+  <%#= render 'layouts/cart_text' %>
+    
+  <!-- </h1> -->
+  <% if user_signed_in? %>
+    <%= render :partial => '/partials/navigation' %>
+  <% end %>
+
+      <%= yield %>
+   <%= render :partial => '/partials/footer' %>   
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<div class="navbar-fixed ">
+
+  <nav class="button-collapse">
+    <div class="nav-wrapper  red">     
+      <a class= "brand-logo white-text" href = '/'>
+      <%= image_tag("logo.jpg", :alt => "rss feed") %></a>
+      <ul id="nav-mobile" class="right">
+      <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+        <li><%= link_to '<i class="small material-icons left">assignment</i> Menu'.html_safe, menus_path, class: "waves-effect white-text" %></li>     
+        <li><a href="badges.html" class="white-text">FAQ<i class="small material-icons left">live_help</i></a></li>
+
+        <li class="cart-text">
+        <%= link_to '<i class="small material-icons left">shopping_cart</i>'.html_safe + " #{current_order.order_items.sum{|a| a.quantity}}", cart_path, class: "waves-effect white-text" %>
+        </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to '<i class="small material-icons left">power_settings_new</i> LogOut'.html_safe, destroy_user_session_path, method: :delete, class: "waves-effect white-text" %>
+        </li>
+        <li>
+          <%#= link_to '<i class="small material-icons left">settings</i> Edit'.html_safe, edit_user_registration_path, class: "waves-effect white-text" %>
+         <!--  <a class="dropdown-button" data-activates="dropdown1" data-beloworigin="true">Profile<i class="material-icons right">arrow_drop_down</i><i class="material-icons left">settings</i></a>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><%#= link_to '<i class="small material-icons left">settings</i> Edit'.html_safe, edit_user_registration_path, class: "waves-effect" %></li>
+            <li class="divider"></li>
+            <li><%#= link_to '<i class="small material-icons left">power_settings_new</i> LogOut'.html_safe, destroy_user_session_path, method: :delete, class: "waves-effect" %></li>
+          </ul> -->
+        
+        </li>
+      <% else %>
+        <li>
+          <%= link_to '<i class="small material-icons left">perm_identity</i> Sign Up'.html_safe, new_user_registration_path, class: "waves-effect white-text" %>
+        </li>
+          <li>
+          <%= link_to '<i class="small material-icons left">supervisor_account</i> Login'.html_safe, new_user_session_path, class: "waves-effect white-text" %>
+        </li>
+        <%end %>
+
+
+      </ul>
+    </div>
+  </nav>
+  </div>

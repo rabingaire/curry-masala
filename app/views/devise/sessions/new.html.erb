@@ -1,0 +1,42 @@
+<div class="container section">
+  <div class= "row">
+    <div class="input-field offset-s3 col s6">
+    <h4> Log in </h4>
+    </div>
+  </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="input-field offset-s3 col s6">
+      <%= f.email_field :email, autofocus: true %>
+      <%= f.label :email %><br />
+    </div>
+  </div>
+
+  <div class="row">
+   <div class="input-field offset-s3 col s6">
+    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password %><br />
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="row">
+      <div class="input-field offset-s3 col s6">
+        <%= f.check_box :remember_me ,  :class => "filled-in"%>
+        <%= f.label :remember_me %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field offset-s3 col s6">
+      <%= f.submit "Log in " , :class => 'btn waves-effect red waves-light'%>
+    </div>
+  </div>
+<% end %>
+  <div class="row">
+      <div class="input-field offset-s3 col s6">
+      <%= render "devise/shared/links" %>
+      </div>
+  </div>
+</div>
