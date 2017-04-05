@@ -1,6 +1,6 @@
 <div class="container section">
     <div class= "row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
       <h4> Sign up </h4>
       </div>
     </div>
@@ -8,21 +8,21 @@
     <%= devise_error_messages! %>
 
     <div class="row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
         <%= f.text_field :name, autofocus: true %>
-        <%= f.label :name %><br />
+        <%= f.label :'Full Name' %><br />
       </div>
     </div>
 
     <div class="row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
         <%= f.email_field :email, autofocus: true %>
         <%= f.label :email %><br />
       </div>
     </div>
 
     <div class="row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
        
         <%= f.password_field :password, autocomplete: "off" %>
         <%= f.label :password %>
@@ -33,20 +33,20 @@
     </div>
 
     <div class="row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
         <%= f.label :password_confirmation %><br />
       </div>
     </div>
 
     <div class="row">
-      <div class="input-field offset-s3 col s6">
+      <div class="input-field col s12">
         <%= f.submit "Sign up",  :class => 'btn waves-effect waves-light' %>
       </div>
     </div>
   <% end %>
   <div class="row">
-    <div class="input-field offset-s3 col s6">
+    <div class="input-field col s12">
       <%= render "devise/shared/links" %>
     </div>
   </div>
