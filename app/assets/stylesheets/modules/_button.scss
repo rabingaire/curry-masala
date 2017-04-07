@@ -1,4 +1,4 @@
-.newsletter-form {
+.newsletter-form, .search-form {
 	margin-top: -15px !important; 
 	border: 2px white solid !important;
 	background-color: white !important;
@@ -7,7 +7,7 @@
 	width: 250px !important;
 }
 
-.newsletter-form:focus:not([readonly]) {
+.newsletter-form:focus:not([readonly]), .search-form:focus:not([readonly]) {
 	border-bottom: 2px white solid !important;
 	box-shadow: none !important;
 }
