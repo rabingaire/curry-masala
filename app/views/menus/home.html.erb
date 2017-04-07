@@ -1,5 +1,15 @@
 <div class="parallax-container center-align">
-	<h1 class="white-text mg-tp-250">South Asian Fusion Kitchen</h1>
+	<h2 class="white-text mg-tp-250">South Asian Fusion Kitchen</h2>
+  <div class="row mg-tp-50">
+    <div class="input-field col s3 offset-s4">
+      <input type="email" class="newsletter-form" placeholder="Enter Your Email">
+    </div>
+    <div class="col s1">
+      <a class="waves-effect waves-light btn-large color-three-background">
+        <i class="large material-icons">search</i>
+      </a>
+    </div>
+  </div>
   <div class="parallax">
     <%= image_tag("banner-picture.jpg", :alt => "Banner Picture Of Masala") %>
   </div>
@@ -7,28 +17,28 @@
 
 <div class="row mg-tp-20">
 	<div class="col s12">
-		<h4 class="center-align #ef6c00 orange-text darken-3">Our Restaurants</h4>
+		<h4 class="center-align color-three-text">Our Restaurants</h4>
 	</div>
 </div>
 
 <div class="container row">
 	<div class="col s12 m6">
-		<div class="card">
+		<div class="card color-three-background">
       <div class="card-image">
       	<%= image_tag("restaurant-one.jpg", :alt => "Restaurant One Picture") %>
       </div>
-      <div class="card-action center-align #ef6c00 orange darken-3">
+      <div class="card-action center-align">
         <a href="#" class="white-text">New York</a>
       </div>
     </div>
 	</div>
 
 	<div class="col s12 m6">
-		<div class="card">
+		<div class="card color-three-background">
       <div class="card-image">
       	<%= image_tag("restaurant-two.jpg", :alt => "Restaurant One Picture") %>
       </div>
-      <div class="card-action center-align #ef6c00 orange darken-3">
+      <div class="card-action center-align">
         <a href="#" class="white-text">London</a>
       </div>
     </div>
@@ -36,13 +46,13 @@
 </div>
 
 <div class="row mg-tp-20">
-  <div class="col s12 #ef6c00 orange-text darken-3">
+  <div class="col s12 color-three-text">
     <h4 class="center-align">Browse by cuisine</h4>
     <h6 class="center-align">choose from your favorite cuisine</h6>
   </div>
 </div>
 
-<div class="container row center-align #ef6c00 orange-text darken-3">
+<div class="container row center-align color-three-text">
   <div class="col s12 m4">
     <p>Hello</p>
     <p>World</p>
@@ -68,5 +78,13 @@
     <p>World</p>
     <p>Hello</p>
     <p>World</p>
+  </div>
+</div>
+
+<div class="row mg-tp-20">
+  <div class="col s12 color-three-text center-align">
+    <h4>Grab Curry Masala in your mobile!</h4>
+    <h6>Get our app, its the fastest way to order food on the go.</h6>
+    <%= image_tag("google.png", :alt => "Get it on google play", height: 80, class: 'mg-tp-20') %>
   </div>
 </div>
