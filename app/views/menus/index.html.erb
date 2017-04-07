@@ -1,48 +1,88 @@
 <p id="notice"><%= notice %></p>   
-<%#= link_to 'New Menu', new_menu_path %>
+<%#= link_to 'New Menu', new_menu_path %> 
 
- <div class="row">
-   <div class="col center section s12">
-    Our Menus
-   </div>
- </div>
-
- <div class="row">
-
-      <div class="col section s3">
-     <!-- <p>Menus</p>? -->
-      <div class="collection">
-          <% @categories.each do |category| %>
-       <%= link_to category.title, menus_path(:id => category.id), class:"collection-item" %>
-       <!-- <span class="badge">1 item</span> -->
-        <% end %>
-        <!-- <a href="#!" class="collection-item"><span class="old badge">4 items</span>Sallad</a> -->
-        <!-- <a href="#!" class="collection-item"><span class="badge">14 items</span>Biryani</a> -->
+<div class="row">
+  <div class="col s12 m8 push-m2">
+    <div class="row">
+      <div class="col section s12">
+        <h4>Our Menus</h4>
       </div>
-        <!-- Grey navigation panel -->
-      </div>
-
-      <div class="col section s7">
-      
-
-
-
-      <ul class="collapsible" data-collapsible="">
-        <% @menus.each do |menu| %>
-           <%= render "product_row", menu: menu, order_item: @order_item %>
-          <% end %>
-        </ul>
-        <!-- Teal page content  -->   
-      </div>
-
-      <div class="col section s2">
-          <%= render :partial => 'cart' %>
-       
-      </div>
-
-       </div>
-
     </div>
+    <!-- <p>Menus</p>? -->
+
+    <ul class="collapsible col s12 no-padding" data-collapsible="accordion">
+
+      <li>
+        <div class="collapsible-header green darken-2 brd-gr-d3 txt-white"><i class="material-icons">local_dining</i>Entree<span class="old badge">2 items</span></div>
+        <div class="collapsible-body">
+        <!-- Collections of items -->
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <%= image_tag("spagetti.jpg", class: 'circle') %>
+              <span class="title">Spagetti bolognese</span>
+              <p>Description.<br>
+                 Second Line.
+              </p>
+              <a href="#!" class="secondary-content">
+                <span class="badge"><i class="small material-icons left no-mg-rt">shopping_cart</i></span>
+                <span class="new badge" data-badge-caption="€">1.5</span>
+              </a>
+            </li>
+            <li class="collection-item avatar">
+              <%= image_tag("steak.jpg", class: 'circle') %>
+              <span class="title">Steak</span>
+              <p>Description.<br>
+                 Second Line.
+              </p>
+              <a href="#!" class="secondary-content">
+                <span class="badge"><i class="small material-icons left no-mg-rt">shopping_cart</i></span>
+                <span class="new badge" data-badge-caption="€">2.5</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="collapsible-header green darken-2 brd-gr-d3 txt-white"><i class="material-icons">local_dining</i>Desserts<span class="old badge">2 items</span></div>
+        <div class="collapsible-body">
+        <!-- Collections of items -->
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <%= image_tag("gulab_jamun.jpg", class: 'circle') %>
+              <span class="title">Gulab Jamun</span>
+              <p>Description.<br>
+                 Second Line.
+              </p>
+              <a href="#!" class="secondary-content">
+                <span class="badge"><i class="small material-icons left no-mg-rt">shopping_cart</i></span>
+                <span class="new badge" data-badge-caption="€">1.5</span>
+              </a>
+            </li>
+            <li class="collection-item avatar">
+              <%= image_tag("jalibe.jpg", class: 'circle') %>
+              <span class="title">Jalibe</span>
+              <p>Description.<br>
+                 Second Line.
+              </p>
+              <a href="#!" class="secondary-content">
+                <span class="badge"><i class="small material-icons left no-mg-rt">shopping_cart</i></span>
+                <span class="new badge" data-badge-caption="€">1.5</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="collapsible-header green darken-2 brd-gr-d3 txt-white"><i class="material-icons">local_dining</i>Third<span class="old badge">0 item</span></div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+
+    </ul>
+    <!-- Grey navigation panel -->
+  </div>
+</div>
 
 <!-- <table>
   <thead>
@@ -62,6 +102,3 @@
     <%# end %>
   </tbody>
 </table> -->
-
-
-
