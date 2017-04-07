@@ -1,51 +1,98 @@
-
- <div class="parallax-container">
-    	<%= image_tag("home.jpg", :alt => "rss feed") %>
-    <div class="parallax">
+<div class="parallax-container center-align">
+	<h2 class="white-text mg-tp-250">South Asian Fusion Kitchen</h2>
+  <div class="row mg-tp-50">
+    <div class="input-field col s3 offset-s4">
+      <input type="text" class="search-form" placeholder="Search">
+    </div>
+    <div class="col s1">
+      <a class="waves-effect waves-light btn-large color-three-background">
+        <i class="large material-icons">search</i>
+      </a>
     </div>
   </div>
-   <div class="section grey lighten-3">
+  <div class="parallax">
+    <%= image_tag("banner-picture.jpg", :alt => "Banner Picture Of Masala") %>
+  </div>
+</div>
 
- 	<div class="row container">
-    <p>Popular Items</p>
-        <div class="col s6">
-          <div class="card">
-            <div class="card-image">
-              <%= image_tag("parallax1.jpg", :alt => "rss feed") %>
-              <span class="card-title">Food Title</span>
-            </div>
-            <div class="card-content">
-              <p>Description of my food</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-         <div class="col s6">
-          <div class="card">
-            <div class="card-image">
-              <%= image_tag("parallax1.jpg", :alt => "rss feed") %>
-              <span class="card-title">Food Title</span>
-            </div>
-            <div class="card-content">
-              <p>Description of food</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Add to Cart</a>
-            </div>
-          </div>
-        </div>
+<div class="row mg-tp-20">
+	<div class="col s12">
+		<h4 class="center-align color-three-text">Our Restaurants</h4>
+	</div>
+</div>
+
+<div class="container row">
+	<div class="col s12 m6">
+		<div class="card">
+      <div class="card-image">
+      	<%= image_tag("restaurant-one.jpg", :alt => "Restaurant One Picture") %>
       </div>
-
-
+      <div class="card-content color-three-text">
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action center-align color-three-background">
+        <a href="#" class="white-text">New York</a>
+      </div>
     </div>
+	</div>
 
-
-
-     <div class="parallax-container">
-    	<%= image_tag("home2.jpg", :alt => "rss feed") %>
-    <div class="parallax">
+	<div class="col s12 m6">
+		<div class="card">
+      <div class="card-image">
+      	<%= image_tag("restaurant-two.jpg", :alt => "Restaurant One Picture") %>
+      </div>
+      <div class="card-content color-three-text">
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action center-align color-three-background">
+        <a href="#" class="white-text">London</a>
+      </div>
     </div>
+	</div>
+</div>
+
+<div class="row mg-tp-20">
+  <div class="col s12 color-three-text">
+    <h4 class="center-align">Browse by cuisine</h4>
+    <h6 class="center-align">choose from your favorite cuisine</h6>
   </div>
-  
+</div>
+
+<div class="container row center-align color-three-text">
+  <div class="col s12 m4">
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+  </div>
+
+  <div class="col s12 m4">
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+  </div>
+
+  <div class="col s12 m4">
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+    <p>Hello</p>
+    <p>World</p>
+  </div>
+</div>
+
+<div class="row mg-tp-20">
+  <div class="col s12 color-three-text center-align">
+    <h4>Grab Curry Masala in your mobile!</h4>
+    <h6>Get our app, its the fastest way to order food on the go.</h6>
+    <%= image_tag("google.png", :alt => "Get it on google play", height: 80, class: 'mg-tp-20') %>
+  </div>
+</div>

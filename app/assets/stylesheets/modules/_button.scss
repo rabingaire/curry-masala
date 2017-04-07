@@ -1,0 +1,13 @@
+.newsletter-form, .search-form {
+	margin-top: -15px !important; 
+	border: 2px white solid !important;
+	background-color: white !important;
+	padding: 3px 25px !important;
+	border-radius: 2px !important;
+	width: 250px !important;
+}
+
+.newsletter-form:focus:not([readonly]), .search-form:focus:not([readonly]) {
+	border-bottom: 2px white solid !important;
+	box-shadow: none !important;
+}
