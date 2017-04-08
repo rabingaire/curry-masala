@@ -1,3 +1,11 @@
+.no-margin {
+	margin: 0;
+}
+
+.no-mg-rt {
+	margin-right: 0;
+}
+
 .mg-tp-20 {
 	margin-top: 20px;
 }
@@ -14,6 +22,10 @@
 	margin-top: 150px;
 }
 
+.mg-bt-100 {
+	margin-bottom: 100px;
+}
+
 .mg-tp-250 {
 	margin-top: 250px;
 }
@@ -28,4 +40,20 @@
 
 .mg-tp-ng-15 {
 	margin-top: -15px !important;
+}
+
+.mg-tp-200 {
+	margin-top: 200px;
+}
+
+.mg-tp-05rem {
+	margin-top: 0.5rem;
+}
+
+.mg-bt-075rem {
+	margin-bottom: 0.75rem;
+}
+
+.mg-bt-1rem {
+	margin-bottom: 1rem;
 }
