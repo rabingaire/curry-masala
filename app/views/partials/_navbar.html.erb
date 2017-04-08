@@ -1,10 +1,11 @@
 <nav class="color-one-background">
   <div class="container">
     <div class="nav-wrapper">
-      <%= link_to image_tag("logo.jpg", :alt => "Restaurant Logo", height: 64), root_path %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <%= link_to image_tag("logo.jpg", :alt => "Restaurant Logo", height: 64), root_path, class: "brand-logo" %>
+      <a href="#" data-activates="sidebar" class="button-collapse pull-right"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li><%= link_to 'Menu', menus_path %></li>
-        <li><a href="">Contact</a></li>
+        <li><%= link_to 'Contact', contact_pages_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
@@ -19,6 +20,28 @@
         <% end %>
         <li class="cart-text">
           <%= link_to '<i class="small material-icons left">shopping_cart</i>'.html_safe + " #{current_order.order_items.sum{|a| a.quantity}}", cart_path %>
+        </li>
+      </ul>
+      <ul class="side-nav center-align" id="sidebar">
+        <li class="mg-tp-50 mg-bt-20">
+          <%= link_to image_tag("logo.jpg", :alt => "Restaurant Logo", height: 64), root_path %>
+        </li>
+        <li><%= link_to 'Menu', menus_path %></li>
+        <li><%= link_to 'Contact', contact_pages_path %></li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Login', new_user_session_path %>  
+          </li>
+          <li>
+            <%= link_to 'Sign Up', new_user_registration_path %>
+          </li>
+        <% end %>
+        <li class="cart-text">
+          <%= link_to "Cart #{current_order.order_items.sum{|a| a.quantity}}", cart_path %>
         </li>
       </ul>
     </div>
