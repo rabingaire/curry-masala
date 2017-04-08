@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color: #fafafa;">
     <%= render :partial => '/partials/navbar', :remote => false%>
     <!-- <h1 class="cart-text"> -->
     <%#= render 'layouts/cart_text' %>
@@ -37,6 +37,18 @@
           map: map
         });
       }
+    </script>
+    <script>
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+
+      $('#timepicker').pickatime({
+        autoclose: false,
+        twelvehour: true,
+        default: '08:30:00'
+      });
     </script>
   </body>
 </html>
