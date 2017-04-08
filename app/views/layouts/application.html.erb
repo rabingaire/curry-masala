@@ -11,16 +11,32 @@
   </head>
 
   <body>
-  <%= render :partial => '/partials/navbar', :remote => false%>
-  <!-- <h1 class="cart-text"> -->
-  <%#= render 'layouts/cart_text' %>
+    <%= render :partial => '/partials/navbar', :remote => false%>
+    <!-- <h1 class="cart-text"> -->
+    <%#= render 'layouts/cart_text' %>
     
-  <!-- </h1> -->
-  <% if user_signed_in? %>
-    <%= render :partial => '/partials/navigation' %>
-  <% end %>
-
-      <%= yield %>
-   <%= render :partial => '/partials/footer' %>   
+    <!-- </h1> -->
+    <% if user_signed_in? %>
+      <%= render :partial => '/partials/navigation' %>
+    <% end %>
+    <%= yield %>
+    <%= render :partial => '/partials/footer' %> 
+    <!-- Include the Google Maps API library - required for embedding maps -->
+    <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoGJPl65yfkgYcc2uBS_ZhrNqMGxfUfNU&callback=initMap">
+    </script>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('googlemaps'), {
+          zoom: 17,
+          center: {lat: 27.7120856, lng: 85.3279411},
+          disableDefaultUI: true
+        });
+        var marker = new google.maps.Marker({
+          position: {lat: 27.7120856, lng: 85.3279411},
+          map: map
+        });
+      }
+    </script>
   </body>
 </html>
