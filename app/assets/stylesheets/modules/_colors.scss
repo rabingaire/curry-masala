@@ -12,7 +12,7 @@ $primary-color-three: #db5a00;
 }
 
 .color-three-text {
-	color: $primary-color-three;
+	color: $primary-color-three !important;
 }
 
 .color-three-background {

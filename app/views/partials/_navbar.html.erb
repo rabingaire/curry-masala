@@ -5,7 +5,7 @@
       <a href="#" data-activates="sidebar" class="button-collapse pull-right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><%= link_to 'Menu', menus_path %></li>
-        <li><a href="#">Contact</a></li>
+        <li><%= link_to 'Contact', contact_pages_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
@@ -27,7 +27,7 @@
           <%= link_to image_tag("logo.jpg", :alt => "Restaurant Logo", height: 64), root_path %>
         </li>
         <li><%= link_to 'Menu', menus_path %></li>
-        <li><a href="">Contact</a></li>
+        <li><%= link_to 'Contact', contact_pages_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
