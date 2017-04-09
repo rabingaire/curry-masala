@@ -15,11 +15,13 @@
           <div class="row">
           <!-- List of catefories -->
             <div class="collection">
-              <a class="collection-item" onclick="jump('maindishes')">
-                <span class="badge right">4 items</span>
-                Main dishes
-              </a>
-              <a class="collection-item" onclick="jump('steak')">
+              <% @categories.each do | categorie | %>
+                <a class="collection-item" onclick="jump('<%= categorie.title %>')">
+                  <span class="badge right"><%= categorie.menus.count %></span>
+                  <%= categorie.title %>
+                </a>
+              <% end %>
+              <!-- <a class="collection-item" onclick="jump('steak')">
                 <span class="badge right">2 items</span>
                 Steak
               </a>
@@ -30,7 +32,7 @@
               <a class="collection-item" onclick="jump('desserts')">
                 <span class="badge right">2 items</span>
                 Desserts
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
@@ -39,228 +41,30 @@
         <div class="col s12 m8">
           <div class="row pd-tp-05rem brd-rt-cd">
             <!-- Item sections -->
-            <div id="maindishes">
-              
-              <div class="col s12">
-                <span class="title"><h5>Main Dishes</h5><div class="divider"></div></span>
-              </div>
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("spagetti.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Spagetti bolognese</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
+            <% @categories.each do | categorie | %>
+              <div id="<%= categorie.title %>">
+                
+                <div class="col s12">
+                  <span class="title"><h5><%= categorie.title %></h5><div class="divider"></div></span>
                 </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("spagetti.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Spagetti bolognese</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
+                <% categorie.menus.each do | menu | %>
+                  <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
+                    <div class="col s12 bg-white z-depth-1">
+                      <%= image_tag("spagetti.jpg", class: "col s12 pd-tp-05rem no-padding") %>
+                      <div class="item-detail col s12 no-padding">
+                        <span class="title"><%= menu.title %></span>
+                        <p class="description"><%= menu.description %></p>
+                      </div>
+                      <div class="item-price col s12 no-padding mg-bt-075rem">
+                        <a href="#" class="col s4 push-s4 no-padding">
+                          <span class="new badge left" style="margin: 0;" data-badge-caption="€"><%= menu.price %></span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("spagetti.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Spagetti bolognese</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("spagetti.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Spagetti bolognese</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-            </div><br clear="all">
-            
-            <div id="steak">
-              
-              <div class="col s12">
-                <span class="title"><h5>Steak</h5><div class="divider"></div></span>
-              </div>
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("steak.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Steak</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("steak.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Steak</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-            </div><br clear="all">
-            
-            <div id="soups">
-              
-              <div class="col s12">
-                <span class="title"><h5>Soups</h5><div class="divider"></div></span>
-              </div>
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("soup.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Soup</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("soup.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Soup</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("soup.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Soup</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("soup.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Soup</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("soup.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Soup</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-            </div><br clear="all">
-            
-            <div id="desserts">
-              
-              <div class="col s12">
-                <span class="title">Desserts<div class="divider"></div></span>
-              </div>
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("gulab_jamun.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Gulab Jamun</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col m6 s12 mg-tp-05rem mg-bt-1rem center-align">
-                <div class="col s12 bg-white z-depth-1">
-                  <%= image_tag("gulab_jamun.jpg", class: "col s12 pd-tp-05rem no-padding") %>
-                  <div class="item-detail col s12 no-padding">
-                    <span class="title">Gulab Jamun</span>
-                    <p class="description">Description 1.<br>Description 2.</p>
-                  </div>
-                  <div class="item-price col s12 no-padding mg-bt-075rem">
-                    <a href="#" class="col s4 push-s4 no-padding">
-                      <span class="new badge left" style="margin: 0;" data-badge-caption="€">2.5</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+                <% end %>
+              </div><br clear="all">
+            <% end %>
           </div>
         </div>
       </div>
