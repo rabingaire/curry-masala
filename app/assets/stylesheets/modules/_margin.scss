@@ -1,9 +1,17 @@
+.no-margin {
+	margin: 0;
+}
+
+.no-mg-rt {
+	margin-right: 0;
+}
+
 .mg-tp-20 {
 	margin-top: 20px;
 }
 
 .mg-tp-50 {
-	margin-top: 50px;
+	margin-top: 50px !important;
 }
 
 .mg-tp-70 {
@@ -12,6 +20,10 @@
 
 .mg-tp-150 {
 	margin-top: 150px;
+}
+
+.mg-bt-100 {
+	margin-bottom: 100px;
 }
 
 .mg-tp-250 {
@@ -30,18 +42,13 @@
 	margin-top: -15px !important;
 }
 
-.no-margin {
-	margin: 0;
-}
-
-.no-mg-rt {
-	margin-right: 0;
-}
-
+<<<<<<< HEAD
+=======
 .mg-tp-200 {
 	margin-top: 200px;
 }
 
+>>>>>>> 47ffaabcf5caf5896c36f7e05429f5102c7e0bb6
 .mg-tp-05rem {
 	margin-top: 0.5rem;
 }
