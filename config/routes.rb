@@ -27,5 +27,11 @@ Rails.application.routes.draw do
   # resources :orders
  
   resources :categories
+  resources :pages do 
+    collection do
+      get 'contact'
+      get 'about_us'
+    end 
+  end
   root :to => 'menus#home'
 end

@@ -1,0 +1,20 @@
+$primary-color-one: #373743;
+$primary-color-two: #d9cc33;
+$primary-color-three: #db5a00;
+
+
+.color-one-background {
+	background-color: $primary-color-one;
+}
+
+.color-two-background {
+	background-color: $primary-color-two !important;
+}
+
+.color-three-text {
+	color: $primary-color-three !important;
+}
+
+.color-three-background {
+	background-color: $primary-color-three !important;
+}
