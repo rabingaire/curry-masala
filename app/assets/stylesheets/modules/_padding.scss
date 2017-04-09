@@ -1,3 +1,7 @@
+.no-padding {
+	padding: 0;
+}
+
 .pd-le-10 {
 	padding-left: 10px;
 }
@@ -16,4 +20,12 @@
 
 .pd-bt-70 {
 	padding-bottom: 70px;
+}
+
+.padding-bottom-075rem {
+	padding-bottom: 0.75rem !important;
+}
+
+.pd-tp-05rem {
+	padding-top: 0.5rem !important;
 }
