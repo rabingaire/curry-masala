@@ -1,44 +1,59 @@
-<div class="container mg-tp-50 mg-bt-50">
-  <div class="container section z-depth-3">
-    <div class= "row center-align color-three-text">
-      <div class="input-field col s12">
-        <h4> Log in </h4>
-      </div>
-    </div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="row">
-      <div class="input-field col s12">
-        <%= f.email_field :email, autofocus: true %>
-        <%= f.label :email %><br />
-      </div>
-    </div>
-
-    <div class="row">
-     <div class="input-field col s12">
-      <%= f.password_field :password, autocomplete: "off" %>
-      <%= f.label :password %><br />
-      </div>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+<div class="container section">
+  <div class="row">
+    <div class="col s12 m6 push-m3 mg-tp-50 z-depth-3">
       <div class="row">
-        <div class="input-field col s12">
-          <%= f.check_box :remember_me ,  :class => "filled-in"%>
-          <%= f.label :remember_me %>
-        </div>
-      </div>
-    <% end %>
+        <div class="col s12 m8 push-m2">
+          <div class="row no-margin">
+            <div class="s12 m8 psuh-m2">
+              <h4 class="color-three-text center-align">Log In</h4>
+            </div> 
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="row no-margin">
 
-    <div class="row">
-      <div class="input-field col s12">
-        <%= f.submit "Log in" , :class => 'btn waves-effect red waves-light color-three-background'%>
-      </div>
-    </div>
-  <% end %>
-    <div class="row">
-        <div class="input-field col s12">
-        <%= render "devise/shared/links" %>
+              <div class="s12">  
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.email_field :email, autofocus: true %>
+                    <%= f.label :email %><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.password_field :password, autocomplete: "off" %>
+                    <%= f.label :password %><br />
+                  </div>
+                </div>
+
+                <% if devise_mapping.rememberable? -%>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.check_box :remember_me ,  :class => "filled-in", style: "vertical-align: top;" %>
+                      <%= f.label :remember_me %>
+                    </div>
+                  </div>
+                <% end %>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.submit "Log in" , :class => 'btn waves-effect red waves-light color-three-background'%>
+                  </div>
+                </div>
+                <div class="divider"></div>
+              </div>
+
+            </div>
+          <% end %>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+
         </div>
+      </div>
     </div>
   </div>
 </div>
