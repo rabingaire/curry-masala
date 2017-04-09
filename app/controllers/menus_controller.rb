@@ -9,7 +9,7 @@ class MenusController < ApplicationController
   # GET /menus.json
   def index
     @categories = Category.all
-     @menus = Menu.all
+    @menus = Menu.all
     if params[:id].present?
       @menus = Menu.where(:category_id => params[:id])  
     end

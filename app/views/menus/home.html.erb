@@ -61,30 +61,10 @@
 </div>
 
 <div class="container row center-align color-three-text">
-  <div class="col s12 m4">
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-  </div>
 
-  <div class="col s12 m4">
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-  </div>
-
-  <div class="col s12 m4">
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-    <p>Hello</p>
-    <p>World</p>
-  </div>
+  <% @popular_items.each do | popular_item | %>
+    <div class="col s12 m4">
+      <p><%= popular_item.title %></p>
+    </div>
+  <% end %> 
 </div>

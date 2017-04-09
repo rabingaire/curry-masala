@@ -1,28 +1,22 @@
 <div class="container mg-tp-50 mg-bt-50">
-  <div class="container section z-depth-3">
-    <div class= "row center-align color-three-text">
-      <div class="input-field col s12">
+  <div class="row">
+    <div class="col s12 m6 card">
+      <div class="center-align color-three-text">
         <h4> Sign up </h4>
       </div>
-    </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>push-m3
+        <%= devise_error_messages! %>
 
-      <div class="row">
         <div class="input-field col s12">
           <%= f.text_field :name, autofocus: true %>
           <%= f.label :'Full Name' %><br />
         </div>
-      </div>
 
-      <div class="row">
         <div class="input-field col s12">
           <%= f.email_field :email, autofocus: true %>
           <%= f.label :email %><br />
         </div>
-      </div>
 
-      <div class="row">
         <div class="input-field col s12">
          
           <%= f.password_field :password, autocomplete: "off" %>
@@ -31,22 +25,16 @@
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
         </div>
-      </div>
 
-      <div class="row">
         <div class="input-field col s12">
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
           <%= f.label :password_confirmation %><br />
         </div>
-      </div>
 
-      <div class="row">
         <div class="input-field col s12">
           <%= f.submit "Sign up",  :class => 'btn waves-effect waves-light color-three-background' %>
         </div>
-      </div>
-    <% end %>
-    <div class="row">
+      <% end %>
       <div class="input-field col s12">
         <%= render "devise/shared/links" %>
       </div>
